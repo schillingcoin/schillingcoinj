@@ -20,19 +20,19 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.matthewmitchell</groupId>
-        <artifactId>peercoinj-parent</artifactId>
+        <groupId>com.schillingcoin</groupId>
+        <artifactId>schillingcoinj-parent</artifactId>
         <version>0.13.1</version>
     </parent>
 
-    <artifactId>peercoinj</artifactId>
+    <artifactId>schillingcoinj</artifactId>
 
-    <name>peercoinj</name>
-    <description>A Java Peercoin library</description>
+    <name>schillingcoinj</name>
+    <description>A Java Schillingcoin library</description>
 
     <packaging>jar</packaging>
 
-    <url>https://github.com/MatthewLM/peercoinj</url>
+    <url>https://github.com/schillingcoin/schillingcoinj</url>
 
     <licenses>
         <license>
