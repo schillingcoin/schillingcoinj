@@ -1,8 +1,8 @@
-package com.matthewmitchell.peercoinj.examples;
+package com.peercoin.peercoinj.examples;
 
 import com.matthewmitchell.peercoinj.core.*;
 import com.matthewmitchell.peercoinj.kits.WalletAppKit;
-import com.matthewmitchell.peercoinj.params.TestNet3Params;
+import com.matthewmitchell.peercoinj.params.MainNetParams;
 import com.matthewmitchell.peercoinj.script.Script;
 
 import java.io.File;
@@ -27,7 +27,7 @@ public class Kit {
         // To test you app with a real network you can use the testnet. The testnet is an alternative peercoin network that follows the same rules as main network. Coins are worth nothing and you can get coins for example from http://faucet.xeno-genesis.com/
         // 
         // For more information have a look at: https://peercoinj.github.io/testing and https://peercoin.org/en/developer-examples#testing-applications
-        NetworkParameters params = TestNet3Params.get();
+        NetworkParameters params = MainNetParams.get();
 
         // Now we initialize a new WalletAppKit. The kit handles all the boilerplate for us and is the easiest way to get everything up and running.
         // Have a look at the WalletAppKit documentation and its source to understand what's happening behind the scenes: https://github.com/peercoinj/peercoinj/blob/master/core/src/main/java/com.matthewmitchell.peercoinj/kits/WalletAppKit.java

@@ -1,7 +1,8 @@
-package com.matthewmitchell.peercoinj.examples;
+package com.peercoin.peercoinj.examples;
 
 import com.matthewmitchell.peercoinj.core.NetworkParameters;
 import com.matthewmitchell.peercoinj.core.Wallet;
+import com.matthewmitchell.peercoinj.params.MainNetParams;
 import com.matthewmitchell.peercoinj.params.TestNet3Params;
 import com.matthewmitchell.peercoinj.wallet.DeterministicSeed;
 import com.google.common.base.Joiner;
@@ -18,7 +19,7 @@ public class BackupToMnemonicSeed {
 
     public static void main(String[] args) {
 
-        NetworkParameters params = TestNet3Params.get();
+        NetworkParameters params = MainNetParams.get();
         Wallet wallet = new Wallet(params);
 
         DeterministicSeed seed = wallet.getKeyChainSeed();

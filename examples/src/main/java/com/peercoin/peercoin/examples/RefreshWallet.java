@@ -15,12 +15,13 @@
  * limitations under the License.
  */
 
-package com.matthewmitchell.peercoinj.examples;
+package com.peercoin.peercoinj.examples;
 
 import com.matthewmitchell.peercoinj.core.*;
-import com.matthewmitchell.peercoinj.params.TestNet3Params;
+import com.matthewmitchell.peercoinj.params.MainNetParams;
 import com.matthewmitchell.peercoinj.store.BlockStore;
 import com.matthewmitchell.peercoinj.store.MemoryBlockStore;
+import com.matthewmitchell.peercoinj.store.ValidHashStore;
 
 import java.io.File;
 import java.net.InetAddress;
@@ -30,17 +31,24 @@ import java.net.InetAddress;
  */
 public class RefreshWallet {
     public static void main(String[] args) throws Exception {
-        File file = new File(args[0]);
-        Wallet wallet = Wallet.loadFromFile(file);
+        final NetworkParameters params = MainNetParams.get();
+
+        File file = new File("test.wallet");
+        Wallet wallet = new Wallet(params);
         System.out.println(wallet.toString());
 
+        File directory = new File(".");
+        String filePrefix = "fetchblock";
+        File validHashFile = new File(directory, filePrefix + ".hashes");
+        ValidHashStore validHashStore = new ValidHashStore(validHashFile);
+
         // Set up the components and link them together.
-        final NetworkParameters params = TestNet3Params.get();
         BlockStore blockStore = new MemoryBlockStore(params);
-        BlockChain chain = new BlockChain(params, wallet, blockStore);
+        BlockChain chain = new BlockChain(params, wallet, blockStore, validHashStore);
 
         final PeerGroup peerGroup = new PeerGroup(params, chain);
-        peerGroup.addAddress(new PeerAddress(InetAddress.getLocalHost()));
+        // peerGroup.addAddress(new PeerAddress(InetAddress.getLocalHost()));
+        peerGroup.addAddress(new PeerAddress(InetAddress.getByName("212.88.22.245")));
         peerGroup.startAsync();
 
         wallet.addEventListener(new AbstractWalletEventListener() {

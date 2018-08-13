@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package com.matthewmitchell.peercoinj.examples;
+package com.peercoin.peercoinj.examples;
 
 import com.matthewmitchell.peercoinj.core.*;
 import com.matthewmitchell.peercoinj.kits.WalletAppKit;
-import com.matthewmitchell.peercoinj.params.RegTestParams;
+import com.matthewmitchell.peercoinj.params.MainNetParams;
 import com.matthewmitchell.peercoinj.protocols.channels.PaymentChannelClientConnection;
 import com.matthewmitchell.peercoinj.protocols.channels.StoredPaymentChannelClientStates;
 import com.matthewmitchell.peercoinj.protocols.channels.ValueOutOfRangeException;
@@ -60,7 +60,7 @@ public class ExamplePaymentChannelClient {
     public ExamplePaymentChannelClient() {
         channelSize = CENT;
         myKey = new ECKey();
-        params = RegTestParams.get();
+        params = MainNetParams.get();
     }
 
     public void run(final String host) throws Exception {

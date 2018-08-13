@@ -1,4 +1,4 @@
-package com.matthewmitchell.peercoinj.examples;
+package com.peercoin.peercoinj.examples;
 
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -6,7 +6,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.matthewmitchell.peercoinj.core.*;
 import com.matthewmitchell.peercoinj.core.Wallet.BalanceType;
 import com.matthewmitchell.peercoinj.kits.WalletAppKit;
-import com.matthewmitchell.peercoinj.params.TestNet3Params;
+import com.matthewmitchell.peercoinj.params.MainNetParams;
 
 import java.io.File;
 
@@ -18,7 +18,7 @@ public class SendRequest {
     public static void main(String[] args) throws Exception {
 
         // We use the WalletAppKit that handles all the boilerplate for us. Have a look at the Kit.java example for more details.
-        NetworkParameters params = TestNet3Params.get();
+        NetworkParameters params = MainNetParams.get();
         WalletAppKit kit = new WalletAppKit(params, new File("."), "sendrequest-example");
         kit.startAsync();
         kit.awaitRunning();

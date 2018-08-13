@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.matthewmitchell.peercoinj.examples;
+package com.peercoin.peercoinj.examples;
 
 import com.matthewmitchell.peercoinj.core.*;
 import com.matthewmitchell.peercoinj.params.TestNet3Params;
@@ -32,33 +32,33 @@ import java.util.List;
  */
 public class FetchTransactions {
     public static void main(String[] args) throws Exception {
-        BriefLogFormatter.init();
-        System.out.println("Connecting to node");
-        final NetworkParameters params = TestNet3Params.get();
-
-        BlockStore blockStore = new MemoryBlockStore(params);
-        BlockChain chain = new BlockChain(params, blockStore);
-        PeerGroup peerGroup = new PeerGroup(params, chain);
-        peerGroup.startAsync();
-        peerGroup.awaitRunning();
-        peerGroup.addAddress(new PeerAddress(InetAddress.getLocalHost(), params.getPort()));
-        peerGroup.waitForPeers(1).get();
-        Peer peer = peerGroup.getConnectedPeers().get(0);
-
-        Sha256Hash txHash = new Sha256Hash(args[0]);
-        ListenableFuture<Transaction> future = peer.getPeerMempoolTransaction(txHash);
-        System.out.println("Waiting for node to send us the requested transaction: " + txHash);
-        Transaction tx = future.get();
-        System.out.println(tx);
-
-        System.out.println("Waiting for node to send us the dependencies ...");
-        List<Transaction> deps = peer.downloadDependencies(tx).get();
-        for (Transaction dep : deps) {
-            System.out.println("Got dependency " + dep.getHashAsString());
-        }
-
-        System.out.println("Done.");
-        peerGroup.stopAsync();
-        peerGroup.awaitTerminated();
+//        BriefLogFormatter.init();
+//        System.out.println("Connecting to node");
+//        final NetworkParameters params = TestNet3Params.get();
+//
+//        BlockStore blockStore = new MemoryBlockStore(params);
+//        BlockChain chain = new BlockChain(params, blockStore);
+//        PeerGroup peerGroup = new PeerGroup(params, chain);
+//        peerGroup.startAsync();
+//        peerGroup.awaitRunning();
+//        peerGroup.addAddress(new PeerAddress(InetAddress.getLocalHost(), params.getPort()));
+//        peerGroup.waitForPeers(1).get();
+//        Peer peer = peerGroup.getConnectedPeers().get(0);
+//
+//        Sha256Hash txHash = new Sha256Hash(args[0]);
+//        ListenableFuture<Transaction> future = peer.getPeerMempoolTransaction(txHash);
+//        System.out.println("Waiting for node to send us the requested transaction: " + txHash);
+//        Transaction tx = future.get();
+//        System.out.println(tx);
+//
+//        System.out.println("Waiting for node to send us the dependencies ...");
+//        List<Transaction> deps = peer.downloadDependencies(tx).get();
+//        for (Transaction dep : deps) {
+//            System.out.println("Got dependency " + dep.getHashAsString());
+//        }
+//
+//        System.out.println("Done.");
+//        peerGroup.stopAsync();
+//        peerGroup.awaitTerminated();
     }
 }

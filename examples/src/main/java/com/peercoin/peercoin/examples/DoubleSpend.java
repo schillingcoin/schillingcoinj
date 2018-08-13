@@ -1,8 +1,8 @@
-package com.matthewmitchell.peercoinj.examples;
+package com.peercoin.peercoinj.examples;
 
 import com.matthewmitchell.peercoinj.core.*;
 import com.matthewmitchell.peercoinj.kits.WalletAppKit;
-import com.matthewmitchell.peercoinj.params.RegTestParams;
+import com.matthewmitchell.peercoinj.params.MainNetParams;
 import com.matthewmitchell.peercoinj.utils.BriefLogFormatter;
 import com.matthewmitchell.peercoinj.utils.Threading;
 
@@ -18,7 +18,7 @@ import static com.matthewmitchell.peercoinj.core.Coin.*;
 public class DoubleSpend {
     public static void main(String[] args) throws Exception {
         BriefLogFormatter.init();
-        final RegTestParams params = RegTestParams.get();
+        final MainNetParams params = MainNetParams.get();
         WalletAppKit kit = new WalletAppKit(params, new File("."), "doublespend");
         kit.connectToLocalHost();
         kit.setAutoSave(false);
