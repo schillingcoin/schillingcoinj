@@ -25,10 +25,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>peercoinj-examples</artifactId>
+    <artifactId>schillingcoinj-examples</artifactId>
 
-    <name>peercoinj Examples</name>
-    <description>A collection of examples using the peercoinj library</description>
+    <name>schillingcoinj Examples</name>
+    <description>A collection of examples using the schillingcoinj library</description>
 
     <dependencies>
         <dependency>

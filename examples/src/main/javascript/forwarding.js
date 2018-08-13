@@ -2,7 +2,7 @@
 //
 // This example shows how to implement the forwarding service demo from the Getting Started tutorial.
 
-var bcj = com.matthewmitchell.peercoinj;
+var bcj = com.schillingcoin.schillingcoinj;
 var params = bcj.params.TestNet3Params.get();
 
 // Address where we'll send received coins (minus the miner fee)
@@ -22,7 +22,7 @@ kit.awaitRunning()
 
 var wallet = kit.wallet();
 var myAddr = wallet.currentReceiveAddress()
-var uri = "peercoin:" + myAddr;
+var uri = "schillingcoin:" + myAddr;
 print("Send coins to: " + myAddr);
 print("QRcode: http://qrickit.com/api/qr?d=" + uri);
 

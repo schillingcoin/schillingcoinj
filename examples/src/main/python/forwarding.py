@@ -5,8 +5,8 @@ __author__ = "richard 'ragmondo' green"
 
 import sys
 
-# Change this to point to where you have a copy of the peercoinj.jar
-sys.path.append(r"/path/to/peercoinj-0.12-SNAPSHOT-bundled.jar")
+# Change this to point to where you have a copy of the schillingcoinj.jar
+sys.path.append(r"/path/to/schillingcoinj-0.12-SNAPSHOT-bundled.jar")
 
 # This is the address to forward all payments to. Change this (unless you want to send me some testnet coins)
 my_address_text = "mzEjmna15T7DXj4HC9MBEG2UJzgFfEYtFo"
@@ -16,11 +16,11 @@ my_address_text = "mzEjmna15T7DXj4HC9MBEG2UJzgFfEYtFo"
 # if it has a confirmed balance in it, then you can set it to 0.
 confirm_wait = 1
 
-from com.matthewmitchell.peercoinj.core import *
+from com.schillingcoin.schillingcoinj.core import *
 
-import com.matthewmitchell.peercoinj.crypto.KeyCrypterException
-import com.matthewmitchell.peercoinj.params.MainNetParams
-from com.matthewmitchell.peercoinj.kits import WalletAppKit
+import com.schillingcoin.schillingcoinj.crypto.KeyCrypterException
+import com.schillingcoin.schillingcoinj.params.MainNetParams
+from com.schillingcoin.schillingcoinj.kits import WalletAppKit
 
 from com.google.common.util.concurrent import FutureCallback
 from com.google.common.util.concurrent import Futures

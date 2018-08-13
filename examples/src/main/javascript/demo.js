@@ -34,7 +34,7 @@
 
 
 // Import some stuff.
-var bcj = com.matthewmitchell.peercoinj;
+var bcj = com.schillingcoin.schillingcoinj;
 var ECKey = bcj.core.ECKey;
 
 // We'll use the testnet for now.

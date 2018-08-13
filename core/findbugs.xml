@@ -20,7 +20,7 @@
 	    <Package name="org.peercoin.protocols.payments"/>
     </Match>
 
-    <!-- peercoinj is not designed to run in an environment with malicious code loaded into the VM -->
+    <!-- schillingcoinj is not designed to run in an environment with malicious code loaded into the VM -->
     <Match>
         <Bug category="MALICIOUS_CODE"/>
     </Match>
@@ -38,7 +38,7 @@
     <!-- The code is correct but findbugs can't analyze it properly -->
     <Match>
         <Bug code="SF"/>
-        <Class name="com.matthewmitchell.peercoinj.core.BloomFilter"/>
+        <Class name="com.schillingcoin.schillingcoinj.core.BloomFilter"/>
     </Match>
 
     <!-- fb doesn't like the odd API this class has -->

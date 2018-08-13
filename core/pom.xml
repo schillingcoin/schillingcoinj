@@ -256,7 +256,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.matthewmitchell.peercoinj.BitcoindComparisonTool</mainClass>
+                                    <mainClass>com.schillingcoin.schillingcoinj.BitcoindComparisonTool</mainClass>
                                     <addClasspath>false</addClasspath>
                                 </manifest>
                             </archive>
@@ -287,7 +287,7 @@
             <version>3.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- peercoinj consumers are expected to provide their own SLF4J adapters
+        <!-- schillingcoinj consumers are expected to provide their own SLF4J adapters
              such as logback, slf4j-log4j12, slf4j-jcl and so on
              see http://www.slf4j.org/faq.html -->
         <dependency>

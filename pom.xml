@@ -20,9 +20,9 @@
     <version>7</version>
   </parent>
 
-  <name>peercoinj Parent</name>
-  <description>Provides the common configuration for the PeercoinJ modules</description>
-  <url>https://github.com/MatthewLM/peercoinj/</url>
+  <name>schillingcoinj Parent</name>
+  <description>Provides the common configuration for the SchillingcoinJ modules</description>
+  <url>https://github.com/schillingcoin/schillingcoinj/</url>
 
   <licenses>
     <license>
@@ -35,7 +35,7 @@
 
   <issueManagement>
     <system>Github Issues</system>
-    <url>https://github.com/MatthewLM/peercoinj/issues</url>
+    <url>https://github.com/schillingcoin/schillingcoinj/issues</url>
   </issueManagement>
 
 
@@ -127,7 +127,7 @@
         <artifactId>slf4j-api</artifactId>
         <version>1.7.6</version>
       </dependency>
-      <!-- peercoinj consumers are expected to provide their own SLF4J adapters
+      <!-- schillingcoinj consumers are expected to provide their own SLF4J adapters
     such as logback, slf4j-log4j12, slf4j-jcl and so on
     see http://www.slf4j.org/faq.html -->
       <dependency>
