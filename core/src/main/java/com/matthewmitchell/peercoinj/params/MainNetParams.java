@@ -32,33 +32,27 @@ public class MainNetParams extends NetworkParameters {
         targetTimespan = TARGET_TIMESPAN;
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
         dumpedPrivateKeyHeader = 183;
-        addressHeader = 55;
-        p2shHeader = 117;
+        addressHeader = 63; // addresses begin with 'S'
+        p2shHeader = 125; // addresses begin with 's'
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
-        port = 9901;
-        packetMagic= 0xe6e8e9e5L;
+        port = 9976;
+        packetMagic = 0xe8f8a422L;
         genesisBlock.setDifficultyTarget(0x1d00ffffL);
-        genesisBlock.setTime(1345084287L);
-        genesisBlock.setNonce(2179302059L);
+        genesisBlock.setTime(1528727751L);
+        genesisBlock.setNonce(907246021L);
         id = ID_MAINNET;
         spendableCoinbaseDepth = 500;
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals("0000000032fe677166d54963b62a4677d8957e87c508eaa4fd7eb1c880cd27e3"), genesisHash);
+        checkState(genesisHash.equals("00000000b45c8fb2ef515c4cf22f29bbe47a7acca246fb25b0ea241577d46e2f"), genesisHash);
 
-        checkpoints.put(19080, new Sha256Hash("000000000000bca54d9ac17881f94193fd6a270c1bb21c3bf0b37f588a40dbd7"));
-        checkpoints.put(30583, new Sha256Hash("d39d1481a7eecba48932ea5913be58ad3894c7ee6d5a8ba8abeb772c66a6696e"));
-        checkpoints.put(99999, new Sha256Hash("27fd5e1de16a4270eb8c68dee2754a64da6312c7c3a0e99a7e6776246be1ee3f"));
-        checkpoints.put(150000, new Sha256Hash("168acfd6e5dce3cc19507ad12a119450da46057166638cf9305140fbc9777f38"));
-        checkpoints.put(200000, new Sha256Hash("7276c692dafdc19078c927dbf257209451d99f29ff49e36b4ffd9a15845edef6"));
-        checkpoints.put(250000, new Sha256Hash("96a343cb1dda01e030719dd7f2edfc396c1143a5e85db67eee02272f02d7dbe5"));
-        checkpoints.put(300000, new Sha256Hash("2beea6c0473b24a9ad873f1fb585eb73fa242590ba3f35df51db0feb0ad732d1"));
-        checkpoints.put(350000, new Sha256Hash("fa9ec7ef3e56c20b7ef7fbae5c921d94e6623fd47ba156deff6bb18c402c0e55"));
+        checkpoints.put(0, new Sha256Hash(genesisHash));
 
         dnsSeeds = new String[] {
-            "seed.peercoin.net",
-            "seed.ppcoin.net",
-            "seed2.peercoin.net",
-            "seed.peercoin-library.org",
+                "seed1.schillingcoin.com",
+                "seed2.schillingcoin.com",
+                "explorer.schillingcoin.com",
+                "pool.schillingcoin.com",
+                "dev.miu.at"
         };
     }
 
@@ -77,7 +71,6 @@ public class MainNetParams extends NetworkParameters {
 
     @Override
     public String toString() {
-        return "Peercoin";
+        return "Schillingcoin";
     }
-
 }

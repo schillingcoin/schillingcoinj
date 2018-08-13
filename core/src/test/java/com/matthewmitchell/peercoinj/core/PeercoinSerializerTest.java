@@ -36,36 +36,36 @@ import static com.matthewmitchell.peercoinj.core.Utils.HEX;
 import static org.junit.Assert.*;
 
 public class PeercoinSerializerTest {
-    private final byte[] addrMessage = HEX.decode("e6e8e9e56164647200000000000000001f000000" +
+    private final byte[] addrMessage = HEX.decode("e8f8a4226164647200000000000000001f000000" +
             "ed52399b01e215104d010000000000000000000000000000000000ffff0a000001208d");
 
     private final byte[] txMessage = HEX.withSeparator(" ", 2).decode(
-            "e6 e8 e9 e5 74 78 00 00  00 00 00 00 00 00 00 00" +
-            "79 01 00 00 60 b3 19 26" +
-            "01 00 00 00 aa 3d 0b 54  02 a0 46 88 b5 c7 bf 97" +
-            "a7 2b 6c 3d 28 b8 4a 6c  5e a0 fd cd 3b f1 7a 19" +
-            "c0 4e d3 55 92 60 44 51  d1 01 00 00 00 6a 47 30" +
-            "44 02 20 5f 96 12 2a 91  ce 63 00 81 12 c5 d2 8e" +
-            "03 7d 25 a5 20 53 72 81  8c 82 6c 76 a0 4b ae 6a" +
-            "7b 1c 64 02 20 30 fb 26  59 83 5c 84 6c 2f fc c1" +
-            "84 8f aa 07 9f 67 2a ca  39 6f bb 18 07 0e 0e 54" +
-            "c7 fd b4 59 a3 01 21 02  d6 bb 69 ba 37 bf 00 53" +
-            "81 5c f0 2b 8b 09 df 01  81 17 8a 2f 64 3a 9b 43" +
-            "91 87 fb e5 72 50 ab 2a  ff ff ff ff db bf 69 88" +
-            "38 13 d8 8f ca d8 61 10  58 c1 ee ce b5 19 53 66" +
-            "1c 4c 02 f6 9c d3 f2 96  35 26 53 5a 01 00 00 00" +
-            "6b 48 30 45 02 21 00 e2  76 9a db 5c d4 07 04 49" +
-            "6d cd f4 ac 21 a3 c7 d9  de 0a 67 dc 2f 01 d3 8a" +
-            "3d de 3e e6 40 dd 37 02  20 6d cb bb 70 1a e3 28" +
-            "1f dc 5b fe a7 75 ba 46  2d 34 6f d1 a7 c5 9b 38" +
-            "bf 77 c4 12 64 07 a5 11  40 01 21 02 d6 bb 69 ba" +
-            "37 bf 00 53 81 5c f0 2b  8b 09 df 01 81 17 8a 2f" +
-            "64 3a 9b 43 91 87 fb e5  72 50 ab 2a ff ff ff ff" +
-            "02 80 8d 5b 00 00 00 00  00 19 76 a9 14 98 fe 16" +
-            "32 33 99 f6 61 1f a4 22  51 f8 3a ac 83 0d e0 02" +
-            "b3 88 ac 10 7a 07 00 00  00 00 00 19 76 a9 14 94" +
-            "df 70 c3 6d 3a 90 ea c8  b5 1a e6 ab 16 af 5d 22" +
-            "69 fc 74 88 ac 00 00 00  00");
+            "e8 f8 a4 22 74 78 00 00  00 00 00 00 00 00 00 00" +
+                    "79 01 00 00 60 b3 19 26" +
+                    "01 00 00 00 aa 3d 0b 54  02 a0 46 88 b5 c7 bf 97" +
+                    "a7 2b 6c 3d 28 b8 4a 6c  5e a0 fd cd 3b f1 7a 19" +
+                    "c0 4e d3 55 92 60 44 51  d1 01 00 00 00 6a 47 30" +
+                    "44 02 20 5f 96 12 2a 91  ce 63 00 81 12 c5 d2 8e" +
+                    "03 7d 25 a5 20 53 72 81  8c 82 6c 76 a0 4b ae 6a" +
+                    "7b 1c 64 02 20 30 fb 26  59 83 5c 84 6c 2f fc c1" +
+                    "84 8f aa 07 9f 67 2a ca  39 6f bb 18 07 0e 0e 54" +
+                    "c7 fd b4 59 a3 01 21 02  d6 bb 69 ba 37 bf 00 53" +
+                    "81 5c f0 2b 8b 09 df 01  81 17 8a 2f 64 3a 9b 43" +
+                    "91 87 fb e5 72 50 ab 2a  ff ff ff ff db bf 69 88" +
+                    "38 13 d8 8f ca d8 61 10  58 c1 ee ce b5 19 53 66" +
+                    "1c 4c 02 f6 9c d3 f2 96  35 26 53 5a 01 00 00 00" +
+                    "6b 48 30 45 02 21 00 e2  76 9a db 5c d4 07 04 49" +
+                    "6d cd f4 ac 21 a3 c7 d9  de 0a 67 dc 2f 01 d3 8a" +
+                    "3d de 3e e6 40 dd 37 02  20 6d cb bb 70 1a e3 28" +
+                    "1f dc 5b fe a7 75 ba 46  2d 34 6f d1 a7 c5 9b 38" +
+                    "bf 77 c4 12 64 07 a5 11  40 01 21 02 d6 bb 69 ba" +
+                    "37 bf 00 53 81 5c f0 2b  8b 09 df 01 81 17 8a 2f" +
+                    "64 3a 9b 43 91 87 fb e5  72 50 ab 2a ff ff ff ff" +
+                    "02 80 8d 5b 00 00 00 00  00 19 76 a9 14 98 fe 16" +
+                    "32 33 99 f6 61 1f a4 22  51 f8 3a ac 83 0d e0 02" +
+                    "b3 88 ac 10 7a 07 00 00  00 00 00 19 76 a9 14 94" +
+                    "df 70 c3 6d 3a 90 ea c8  b5 1a e6 ab 16 af 5d 22" +
+                    "69 fc 74 88 ac 00 00 00  00");
 
     @Test
     public void testAddr() throws Exception {
@@ -86,7 +86,7 @@ public class PeercoinSerializerTest {
     public void testLazyParsing()  throws Exception {
         PeercoinSerializer bs = new PeercoinSerializer(MainNetParams.get(), true, false);
 
-    	Transaction tx = (Transaction)bs.deserialize(ByteBuffer.wrap(txMessage));
+        Transaction tx = (Transaction)bs.deserialize(ByteBuffer.wrap(txMessage));
         assertNotNull(tx);
         assertEquals(false, tx.isParsed());
         assertEquals(true, tx.isCached());
@@ -106,7 +106,7 @@ public class PeercoinSerializerTest {
 
     private void testCachedParsing(boolean lazy)  throws Exception {
         PeercoinSerializer bs = new PeercoinSerializer(MainNetParams.get(), lazy, true);
-        
+
         //first try writing to a fields to ensure uncaching and children are not affected
         Transaction tx = (Transaction)bs.deserialize(ByteBuffer.wrap(txMessage));
         assertNotNull(tx);
@@ -123,7 +123,7 @@ public class PeercoinSerializerTest {
         bs.serialize(tx, bos);
         assertEquals(true, !Arrays.equals(txMessage, bos.toByteArray()));
 
-      //now try writing to a child to ensure uncaching is propagated up to parent but not to siblings
+        //now try writing to a child to ensure uncaching is propagated up to parent but not to siblings
         tx = (Transaction)bs.deserialize(ByteBuffer.wrap(txMessage));
         assertNotNull(tx);
         assertEquals(!lazy, tx.isParsed());
@@ -139,7 +139,7 @@ public class PeercoinSerializerTest {
         bs.serialize(tx, bos);
         assertEquals(true, !Arrays.equals(txMessage, bos.toByteArray()));
 
-      //deserialize/reserialize to check for equals.
+        //deserialize/reserialize to check for equals.
         tx = (Transaction)bs.deserialize(ByteBuffer.wrap(txMessage));
         assertNotNull(tx);
         assertEquals(!lazy, tx.isParsed());
@@ -148,7 +148,7 @@ public class PeercoinSerializerTest {
         bs.serialize(tx, bos);
         assertEquals(true, Arrays.equals(txMessage, bos.toByteArray()));
 
-      //deserialize/reserialize to check for equals.  Set a field to it's existing value to trigger uncache
+        //deserialize/reserialize to check for equals.  Set a field to it's existing value to trigger uncache
         tx = (Transaction)bs.deserialize(ByteBuffer.wrap(txMessage));
         assertNotNull(tx);
         assertEquals(!lazy, tx.isParsed());
@@ -170,7 +170,7 @@ public class PeercoinSerializerTest {
     public void testHeaders1() throws Exception {
         PeercoinSerializer bs = new PeercoinSerializer(MainNetParams.get());
 
-        HeadersMessage hm = (HeadersMessage) bs.deserialize(ByteBuffer.wrap(HEX.decode("e6e8e9e5686561" +
+        HeadersMessage hm = (HeadersMessage) bs.deserialize(ByteBuffer.wrap(HEX.decode("e8f8a422686561" +
                 "64657273000000000053000000a25e0bfc01010000006fe28c0ab6f1b372c1a6a246ae6" +
                 "3f74f931e8365e15a089c68d6190000000000982051fd1e4ba744bbbe680e1fee14677b" +
                 "a1a3c3540bf7b1cdb606e857233e0e61bc6649ffff001d01e362990000")));
@@ -195,7 +195,7 @@ public class PeercoinSerializerTest {
     public void testHeaders2() throws Exception {
         PeercoinSerializer bs = new PeercoinSerializer(MainNetParams.get());
 
-        HeadersMessage hm = (HeadersMessage) bs.deserialize(ByteBuffer.wrap(HEX.decode("e6e8e9e56865616465" +
+        HeadersMessage hm = (HeadersMessage) bs.deserialize(ByteBuffer.wrap(HEX.decode("e8f8a4226865616465" +
                 "72730000000000ed010000ef3fcbd706010000006fe28c0ab6f1b372c1a6a246ae63f74f931e" +
                 "8365e15a089c68d6190000000000982051fd1e4ba744bbbe680e1fee14677ba1a3c3540bf7b1c" +
                 "db606e857233e0e61bc6649ffff001d01e362990000010000004860eb18bf1b1620e37e9490fc8a" +

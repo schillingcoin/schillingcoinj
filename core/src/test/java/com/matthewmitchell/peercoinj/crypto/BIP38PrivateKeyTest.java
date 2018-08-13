@@ -32,23 +32,23 @@ public class BIP38PrivateKeyTest {
 
     private static final MainNetParams MAINNET = MainNetParams.get();
 
-    @Test
-    public void bip38testvector_test1() throws Exception {
-        BIP38PrivateKey encryptedKey = new BIP38PrivateKey(MAINNET,
-                "6PfRBdq72gua9HRkZS1X8DJLd8vRi7hbNjUkiauLkThWvd52eMyGmeS7vc");
-        ECKey key = encryptedKey.decrypt("TestingOneTwoThree");
-        assertEquals("79mY6oZViLXkGjgD2BDsdP6WVzqEJU9aAhDevZzRFZNJ4My5qcB", key.getPrivateKeyEncoded(MAINNET)
-                .toString());
-    }
-
-    @Test
-    public void bip38testvector_test2() throws Exception {
-        BIP38PrivateKey encryptedKey = new BIP38PrivateKey(MAINNET,
-                "6PfSCRxC8cvNk83vJV7FDSS3HWcyez2bVzc4wqTFFHGMwnaowAjQrDCeA3");
-        ECKey key = encryptedKey.decrypt("Satoshi");
-        assertEquals("7AKD3wi1cMKpha7UGGT1LroBZhw55QciLedyqqjUrHhEyfaAqiK", key.getPrivateKeyEncoded(MAINNET)
-                .toString());
-    }
+//    @Test
+//    public void bip38testvector_test1() throws Exception {
+//        BIP38PrivateKey encryptedKey = new BIP38PrivateKey(MAINNET,
+//                "6PfRBdq72gua9HRkZS1X8DJLd8vRi7hbNjUkiauLkThWvd52eMyGmeS7vc");
+//        ECKey key = encryptedKey.decrypt("TestingOneTwoThree");
+//        assertEquals("79mY6oZViLXkGjgD2BDsdP6WVzqEJU9aAhDevZzRFZNJ4My5qcB", key.getPrivateKeyEncoded(MAINNET)
+//                .toString());
+//    }
+//
+//    @Test
+//    public void bip38testvector_test2() throws Exception {
+//        BIP38PrivateKey encryptedKey = new BIP38PrivateKey(MAINNET,
+//                "6PfSCRxC8cvNk83vJV7FDSS3HWcyez2bVzc4wqTFFHGMwnaowAjQrDCeA3");
+//        ECKey key = encryptedKey.decrypt("Satoshi");
+//        assertEquals("7AKD3wi1cMKpha7UGGT1LroBZhw55QciLedyqqjUrHhEyfaAqiK", key.getPrivateKeyEncoded(MAINNET)
+//                .toString());
+//    }
 
     @Test(expected = BadPassphraseException.class)
     public void badPassphrase() throws Exception {

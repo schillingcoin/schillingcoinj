@@ -32,7 +32,7 @@ import static org.junit.Assert.*;
 public class PeercoinURITest {
     private PeercoinURI testObject = null;
 
-    private static final String MAINNET_GOOD_ADDRESS = "PKf1PvTHnNncWTigggeXPnt5GH6LuDsnM4";
+    private static final String MAINNET_GOOD_ADDRESS = "ShidnFvgMXU36DtCSArMWu25YT8eFoY3oM";
     private static final String MAINNET_BAD_ADDRESS = "mranY19RYUjgJjXY4BJNYp88WXXAg7Pr9T";
 
     @Test
@@ -77,13 +77,13 @@ public class PeercoinURITest {
 
         for (String scheme : PeercoinURI.PEERCOIN_SCHEMES) {
             testObject = new PeercoinURI(
-                MainNetParams.get(), scheme + ":" + MAINNET_GOOD_ADDRESS
+                    MainNetParams.get(), scheme + ":" + MAINNET_GOOD_ADDRESS
             );
             assertNotNull(testObject);
             assertNull("Unexpected amount", testObject.getAmount());
             assertNull("Unexpected label", testObject.getLabel());
             assertEquals(
-                "Unexpected label", 20, testObject.getAddress().getHash160().length
+                    "Unexpected label", 20, testObject.getAddress().getHash160().length
             );
         }
 
@@ -249,7 +249,7 @@ public class PeercoinURITest {
         testObject = new PeercoinURI(MainNetParams.get(), PeercoinURI.PREFERED_PEERCOIN_SCHEME + ":" + MAINNET_GOOD_ADDRESS
                 + "?amount=6543210&label=Hello%20World&message=Be%20well");
         assertEquals(
-                "PeercoinURI['amount'='6543210000000','label'='Hello World','message'='Be well','address'='PKf1PvTHnNncWTigggeXPnt5GH6LuDsnM4']",
+                "PeercoinURI['amount'='6543210000000','label'='Hello World','message'='Be well','address'='ShidnFvgMXU36DtCSArMWu25YT8eFoY3oM']",
                 testObject.toString());
     }
 
@@ -326,7 +326,7 @@ public class PeercoinURITest {
         // Unknown not required field
         testObject = new PeercoinURI(MainNetParams.get(), PeercoinURI.PREFERED_PEERCOIN_SCHEME + ":" + MAINNET_GOOD_ADDRESS
                 + "?aardvark=true");
-        assertEquals("PeercoinURI['aardvark'='true','address'='PKf1PvTHnNncWTigggeXPnt5GH6LuDsnM4']", testObject.toString());
+        assertEquals("PeercoinURI['aardvark'='true','address'='ShidnFvgMXU36DtCSArMWu25YT8eFoY3oM']", testObject.toString());
 
         assertEquals("true", (String) testObject.getParameterByName("aardvark"));
 
@@ -352,9 +352,9 @@ public class PeercoinURITest {
     @Test
     public void brokenURIs() throws PeercoinURIParseException {
         // Check we can parse the incorrectly formatted URIs produced by blockchain.info and its iPhone app.
-        String str = "peercoin://PKf1PvTHnNncWTigggeXPnt5GH6LuDsnM4?amount=0.01000000";
+        String str = "peercoin://ShidnFvgMXU36DtCSArMWu25YT8eFoY3oM?amount=0.01000000";
         PeercoinURI uri = new PeercoinURI(str);
-        assertEquals("PKf1PvTHnNncWTigggeXPnt5GH6LuDsnM4", uri.getAddress().toString());
+        assertEquals("ShidnFvgMXU36DtCSArMWu25YT8eFoY3oM", uri.getAddress().toString());
         assertEquals(CENT, uri.getAmount());
     }
 

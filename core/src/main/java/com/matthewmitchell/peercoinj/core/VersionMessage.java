@@ -19,6 +19,7 @@ package com.matthewmitchell.peercoinj.core;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -75,7 +76,7 @@ public class VersionMessage extends Message {
     /** The version of this library release, as a string. */
     public static final String PEERCOINJ_VERSION = "0.13.1";
     /** The value that is prepended to the subVer field of this application. */
-    public static final String LIBRARY_SUBVER = "/PeercoinJ:" + PEERCOINJ_VERSION + "/";
+    public static final String LIBRARY_SUBVER = "/SchillingcoinJ:" + PEERCOINJ_VERSION + "/";
 
     public VersionMessage(NetworkParameters params, byte[] payload) throws ProtocolException {
         super(params, payload, 0);
@@ -96,8 +97,8 @@ public class VersionMessage extends Message {
             // We hard-code the IPv4 localhost address here rather than use InetAddress.getLocalHost() because some
             // mobile phones have broken localhost DNS entries, also, this is faster.
             final byte[] localhost = { 127, 0, 0, 1 };
-            myAddr = new PeerAddress(InetAddress.getByAddress(localhost), params.getPort(), 0);
-            theirAddr = new PeerAddress(InetAddress.getByAddress(localhost), params.getPort(), 0);
+            myAddr = new PeerAddress(InetAddress.getByAddress(localhost), params.getPort(), NetworkParameters.PROTOCOL_VERSION);
+            theirAddr = new PeerAddress(InetAddress.getByAddress(localhost), params.getPort(), NetworkParameters.PROTOCOL_VERSION);
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);  // Cannot happen (illegal IP length).
         }
@@ -124,9 +125,9 @@ public class VersionMessage extends Message {
         clientVersion = (int) readUint32();
         localServices = readUint64().longValue();
         time = readUint64().longValue();
-        myAddr = new PeerAddress(params, payload, cursor, 0);
+        myAddr = new PeerAddress(params, payload, cursor, NetworkParameters.PROTOCOL_VERSION);
         cursor += myAddr.getMessageSize();
-        theirAddr = new PeerAddress(params, payload, cursor, 0);
+        theirAddr = new PeerAddress(params, payload, cursor, NetworkParameters.PROTOCOL_VERSION);
         cursor += theirAddr.getMessageSize();
         // uint64 localHostNonce  (random data)
         // We don't care about the localhost nonce. It's used to detect connecting back to yourself in cases where
@@ -181,7 +182,7 @@ public class VersionMessage extends Message {
         buf.write(subVerBytes);
         // Size of known block chain.
         Utils.uint32ToByteStreamLE(bestHeight, buf);
-        buf.write(relayTxesBeforeFilter ? 1 : 0);
+        // buf.write(relayTxesBeforeFilter ? 1 : 0);
     }
 
     /**

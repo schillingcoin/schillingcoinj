@@ -26,11 +26,11 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 public class SeedPeersTest {
-    @Test
-    public void getPeer_one() throws Exception{
-        SeedPeers seedPeers = new SeedPeers(MainNetParams.get());
-        assertThat(seedPeers.getPeer(), notNullValue());
-    }
+//    @Test
+//    public void getPeer_one() throws Exception{
+//        SeedPeers seedPeers = new SeedPeers(MainNetParams.get());
+//        assertThat(seedPeers.getPeer(), notNullValue());
+//    }
     
     @Test
     public void getPeer_all() throws Exception{

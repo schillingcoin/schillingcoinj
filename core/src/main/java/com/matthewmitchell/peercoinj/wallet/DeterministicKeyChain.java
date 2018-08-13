@@ -114,7 +114,7 @@ public class DeterministicKeyChain implements EncryptableKeyChain {
     // yet. For new chains it's set to whatever the default is, unless overridden by setLookaheadSize. For deserialized
     // chains, it will be calculated on demand from the number of loaded keys.
     private static final int LAZY_CALCULATE_LOOKAHEAD = -1;
-    private int lookaheadSize = 100;
+    private int lookaheadSize = 20;
     // The lookahead threshold causes us to batch up creation of new keys to minimize the frequency of Bloom filter
     // regenerations, which are expensive and will (in future) trigger chain download stalls/retries. One third
     // is an efficiency tradeoff.

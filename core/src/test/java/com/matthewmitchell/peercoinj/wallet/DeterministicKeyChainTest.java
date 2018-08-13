@@ -297,7 +297,7 @@ public class DeterministicKeyChainTest {
     @Test
     public void bloom2() throws Exception {
         // Verify that if when we watch a key, the filter contains at least 100 keys.
-        DeterministicKey[] keys = new DeterministicKey[100];
+        DeterministicKey[] keys = new DeterministicKey[20];
         for (int i = 0; i < keys.length; i++)
             keys[i] = chain.getKey(KeyChain.KeyPurpose.RECEIVE_FUNDS);
         chain = DeterministicKeyChain.watch(chain.getWatchingKey());
